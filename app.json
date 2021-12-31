@@ -1,0 +1,7 @@
+{
+  "name": "NewBot",
+  "description": "WhatsApp Bot echo en base a Nodejs",
+  "repository": "https://github.com/Bossofc",
+  "logo": "https://i.ibb.co/QJRWXb9/IMG-20211107-WA0044.jpg",
+  "keywords": ["nodejs", "bot", "whatsapp bot", "ConfuMods"]
+}
