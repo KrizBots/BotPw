@@ -766,8 +766,6 @@ const getRegisteredRandomId = () => {
             _registered.push(obj)
             fs.writeFileSync('./database/user/registered.json', JSON.stringify(_registered))
         }
-        
-   
 //******************* 》banchat《 ********************\\
 if (isBanchat){
 if (!itsMe && !isOwner)return 
@@ -1309,7 +1307,6 @@ ${readmore}
 
 ┏━━❏ *CREADOR*
 ┣❏ ${prefix}sticker
-┣❏ ${prefix}robar name | name
 ┣❏ ${prefix}emoji
 ┣❏ ${prefix}golden text
 ┣❏ ${prefix}flower text
@@ -1369,7 +1366,8 @@ ${readmore}
 ┣❏ ${prefix}image
 ┣❏ ${prefix}take 
 ┣❏ ${prefix}avatar
-┣❏ ${prefix}muslos
+┣❏ ${prefix}
+┣❏ ${prefix}pack
 
 ┏━━❏ REACCIONES
 ┣❏ ${prefix}besar
@@ -1389,11 +1387,8 @@ ${readmore}
 ┣❏ ${prefix}sticktag
 ┣❏ ${prefix}totag
 
-┏━━❏ *NSFW*
+┏━━❏ *+18*
 ┣❏ ${prefix}hentai
-┣❏ ${prefix}hentai2
-┣❏ ${prefix}mach
-┣❏ ${prefix}kimono
 ┣❏ ${prefix}blowjob
 ┣❏ ${prefix}kona
 ┣❏ ${prefix}wallpaper
@@ -1417,21 +1412,7 @@ prep = await cnf.prepareMessageFromContent(from,{buttonsMessage},{quoted: fkonta
                cnf.relayWAMessage(prep)
              
                break
-case 'tiktokdl': 
-       case 'ttdl':
-     case 'tiktok':
-        case 'ttnowm': 
-      case 'tiktoknowm':
-             
-             if (!q) return reply('Link?')
-             if (!q.includes('tiktok.com')) return reply(mess.error.Iv)
-             reply(mess.wait)
-             anu = await TiktokDownloader(`${q}`)
-            .then((data) => { sendMediaURL(from, data.result.nowatermark) })
-            .catch((err) => { reply(String(err)) })
-             break
 case 'avatar':
-if (isBanned) return  reply(mess.banned)
 if (!isRegistered) return reply(ind.noregis())			  
 			anu = await axios.get('https://nekos.life/api/v2/img/avatar')
 				avatars = await getBuffer(anu.data.url)
@@ -1541,7 +1522,6 @@ case 'puta':
 
               
 
-case "robar":
       case "take":
 if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quoted: fkontak})
         if (!isQuotedSticker) return fakegroup("Y el sticker?");
@@ -3157,42 +3137,7 @@ break
         break;
       //Fin
       //------------------< Descargas >-------------------
-      case "tiktok":
-        if (!isUrl(args[0]) && !args[0].includes("tiktok.com"))
-          return fakegroup(mess.Iv);
-        var bv = await fetchJson(
-          `https://api.dhnjing.xyz/downloader/tiktok/nowatermark?url=${args[0]}`
-        );
-        var b = bv.result.author_metadata;
-        var tamnel = await getBuffer(
-          bv.result.media_resources.image.contentUrl
-        );
-        var a = bv.result.media_metadata;
-        sendButImage(
-          from,
-          `⚜️ *Nombre de usuario*: ${b.username}\n❤️ *Like*: ${a.stats.diggCount}\n💬 *Comentarios*: ${a.stats.commentCount}\n🔁 *Compartir*: ${a.stats.shareCount}\n🎞️ *Vistas*: ${a.stats.playCount}`,
-          `Elija el formato que desea descargar`,
-          tamnel,
-          [
-            {
-              buttonId: `tiktokdl ${args[0]}|video`,
-              buttonText: {
-                displayText: `VIDEO`,
-              },
-              type: 1,
-            },
-            {
-              buttonId: `tiktokdl ${args[0]}|audio`,
-              buttonText: {
-                displayText: `AUDIO`,
-              },
-              type: 1,
-            },
-          ]
-        );
-        break;
-
-           
+     
       case "twitter":
         if (!isUrl(args[0]) && !args[0].includes("twitter.com"))
           return fakegroup(mess.Iv);
@@ -3236,20 +3181,7 @@ break
           }
         });
         break;
-      case "tiktokdl":
-        var gh = args.join("");
-        var link = gh.split("|")[0];
-        var tipe = gh.split("|")[1];
-        var bv = await fetchJson(
-          `https://api.dhnjing.xyz/downloader/tiktok/nowatermark?url=${link}`
-        );
-        if (tipe == "audio") {
-          sendMediaURL(from, bv.result.media_resources.music.playUrl, "");
-        }
-        if (tipe == "video") {
-          sendMediaURL(from, bv.result.media_resources.video.videoUrl, "");
-        }
-        break;
+      
 case 'setprefix':
       if (!isOwner && !mek.key.fromMe) return fakegroup('Solo el propietario puede usar esta función')
        if (args.length < 1) return fakegroup(`Opciones :\n=> multi\n=> nopref`)
@@ -3374,68 +3306,18 @@ cnf.sendMessage(_.jid,
 }
              break
 
-case 'yuri':
-if (!isGroup) return fakegroup('esta funcion es solo para grupos')
-if (!isNsfw) return fakegroup(`La función nsfw aún no está activa en este grupo\nEscribe ${prefix}nsfw 1`)
-
-kon = await getBuffer(`https://hardianto-chan.herokuapp.com/api/anime/random?nsfw=yuri&apikey=${hardi}`)
-buttons = [{buttonId: `yuri`,buttonText:{displayText: `siguiente`},type:1}]
-              imageMsg = (await cnf.prepareMessageMedia(kon, "imageMessage", { thumbnail: kon, })).imageMessage
-              buttonsMessage = {footerText:'Kriz Edits', imageMessage: imageMsg,
-              contentText:`Nota: No hacer spam`,buttons,headerType:4}
-              prep = await cnf.prepareMessageFromContent(from,{buttonsMessage},{quoted: ftrol})
-              cnf.relayWAMessage(prep)
-break
 
 
-case 'eroneko':
-if (!isGroup) return fakegroup('esta funcion es solo para grupos')
-if (!isNsfw) return fakegroup(`La función nsfw aún no está activa en este grupo\nEscribe ${prefix}nsfw 1`)
-
-hai = await getBuffer(`https://hardianto-chan.herokuapp.com/api/anime/random?nsfw=eroNeko&apikey=${hardi}`)
-buttons = [{buttonId: `eroneko`,buttonText:{displayText: `siguiente`},type:1}]
-              imageMsg = (await cnf.prepareMessageMedia(hai, "imageMessage", { thumbnail: hai, })).imageMessage
-              buttonsMessage = {footerText:'Kriz Edits', imageMessage: imageMsg,
-              contentText:`Nota: No hacer spam`,buttons,headerType:4}
-              prep = await cnf.prepareMessageFromContent(from,{buttonsMessage},{quoted: ftrol})
-              cnf.relayWAMessage(prep)
-break
 case  'blowjob':
 if (!isGroup) return reply(mess.only.group)
-if (!isNsfw) return reply(`La función nsfw aún no está activa en este grupo\nEscribe ${prefix}nsfw 1`)
 reply(mess.wait)
 anu = await fetchJson(`https://nekos.life/api/v2/img/blowjob`)
 buffer = await getBuffer(anu.url)
 cnf.sendMessage(from, buffer, image, { quoted: mek})
 break
-case 'ecchi':
-if (!isGroup) return fakegroup('esta funcion es solo para grupos')
-if (!isNsfw) return fakegroup(`La función nsfw aún no está activa en este grupo\nEscribe ${prefix}nsfw 1`)
-
-yoiz = await getBuffer(`https://api.lolhuman.xyz/api/random/nsfw/ecchi?apikey=${lolh}`)
-buttons = [{buttonId: `ecchi`,buttonText:{displayText: `siguiente`},type:1}]
-              imageMsg = (await cnf.prepareMessageMedia(yoiz, "imageMessage", { thumbnail: yoiz, })).imageMessage
-              buttonsMessage = {footerText:'Kriz Edits', imageMessage: imageMsg,
-              contentText:`Nota: No hacer spam`,buttons,headerType:4}
-              prep = await cnf.prepareMessageFromContent(from,{buttonsMessage},{quoted: ftrol})
-              cnf.relayWAMessage(prep)
-break
-case 'ahegao':
-if (!isGroup) return fakegroup('esta funcion es solo para grupos')
-if (!isNsfw) return fakegroup(`La funci�n nsfw a�n no est� activa en este grupo\nEscribe ${prefix}nsfw 1`)
-
-yoiz = await getBuffer(`https://api.lolhuman.xyz/api/random/nsfw/ahegao?apikey=${lolh}`)
-buttons = [{buttonId: `ahegao`,buttonText:{displayText: `siguiente`},type:1}]
-              imageMsg = (await cnf.prepareMessageMedia(yoiz, "imageMessage", { thumbnail: yoiz, })).imageMessage
-              buttonsMessage = {footerText:'Kriz Edits', imageMessage: imageMsg,
-              contentText:`Nota: No hacer spam`,buttons,headerType:4}
-              prep = await cnf.prepareMessageFromContent(from,{buttonsMessage},{quoted: ftrol})
-              cnf.relayWAMessage(prep)
-break
 
 case 'stickcum':
 case 'scum':
-if (!isNsfw) return reply('La Funcion De Nsfw No Est� Activa')
       ranp = getRandom('.gif')
       rano = getRandom('.webp')
 			anu = await axios.get('https://nekos.life/api/v2/img/cum')
@@ -3450,7 +3332,6 @@ if (!isNsfw) return reply('La Funcion De Nsfw No Est� Activa')
 
 case 'kitsune':
 if (!isGroup) return fakegroup('esta funcion es solo para grupos')
-if (!isNsfw) return fakegroup(`La funci�n nsfw a�n no est� activa en este grupo\nEscribe ${prefix}nsfw 1`)
 
 hai = await getBuffer(`https://hardianto-chan.herokuapp.com/api/anime/random?nsfw=kitsune&apikey=${hardi}`)
 buttons = [{buttonId: `kitsune`,buttonText:{displayText: `siguiente`},type:1}]
@@ -3463,7 +3344,6 @@ break
 
 case 'wallpaper':
 if (!isGroup) return fakegroup('esta funcion es solo para grupos')
-if (!isNsfw) return fakegroup(`La funci�n nsfw a�n no est� activa en este grupo\nEscribe ${prefix}nsfw 1`)
 
 hai = await getBuffer(`https://hardianto-chan.herokuapp.com/api/anime/random?sfw=wallpaper&apikey=${hardi}`)
 buttons = [{buttonId: `wallpaper`,buttonText:{displayText: `siguiente`},type:1}]
@@ -3473,68 +3353,11 @@ buttons = [{buttonId: `wallpaper`,buttonText:{displayText: `siguiente`},type:1}]
               prep = await cnf.prepareMessageFromContent(from,{buttonsMessage},{quoted: fvn})
               cnf.relayWAMessage(prep)
 break
-case 'neko2':
-if (!isGroup) return fakegroup('esta funcion es solo para grupos')
-if (!isNsfw) return fakegroup(`La funci�n nsfw a�n no est� activa en este grupo\nEscribe ${prefix}nsfw 1`)
 
-hai = await getBuffer(`https://hardianto-chan.herokuapp.com/api/anime/random?sfw=neko&apikey=${hardi}`)
-buttons = [{buttonId: `neko2`,buttonText:{displayText: `siguiente`},type:1}]
-              imageMsg = (await cnf.prepareMessageMedia(hai, "imageMessage", { thumbnail: hai, })).imageMessage
-              buttonsMessage = {footerText:'Kriz Edits', imageMessage: imageMsg,
-              contentText:`Nota: No hacer spam`,buttons,headerType:4}
-              prep = await cnf.prepareMessageFromContent(from,{buttonsMessage},{quoted: fvn})
-              cnf.relayWAMessage(prep)
-break
-case 'baka':
-if (!isGroup) return fakegroup('esta funcion es solo para grupos')
-if (!isNsfw) return fakegroup(`La funci�n nsfw a�n no est� activa en este grupo\nEscribe ${prefix}nsfw 1`)
-
-hai = await getBuffer(`https://hardianto-chan.herokuapp.com/api/anime/random?sfw=baka&apikey=${hardi}`)
-buttons = [{buttonId: `baka`,buttonText:{displayText: `siguiente`},type:1}]
-              imageMsg = (await cnf.prepareMessageMedia(hai, "imageMessage", { thumbnail: hai, })).imageMessage
-              buttonsMessage = {footerText:'Kriz Edits', imageMessage: imageMsg,
-              contentText:`Nota: No hacer spam`,buttons,headerType:4}
-              prep = await cnf.prepareMessageFromContent(from,{buttonsMessage},{quoted: fvn})
-              cnf.relayWAMessage(prep)
-              case 'kemono':
-case 'kimono':
-if (!isGroup) return reply('esta funci�n es solo para grupos')
-if (!isNsfw) return reply(`La funci�n nsfw a�n no est� activa en este grupo\nEscribe ${prefix}nsfw 1`)
-reply(mess.wait)
-anu = await fetchJson(`https://x-restapi.herokuapp.com/api/random-kemono?apikey=BETA`)
-yoiz = await getBuffer(anu.link)
-buttons = [{buttonId: `kemono`,buttonText:{displayText: `Siguiente`},type:1}]
-              imageMsg = (await cnf.prepareMessageMedia(yoiz, "imageMessage", { thumbnail: yoiz, })).imageMessage
-              buttonsMessage = {footerText:'*BOT*', imageMessage: imageMsg,
-              contentText:`Nota: No hacer spam`,buttons,headerType:4}
-              prep = await cnf.prepareMessageFromContent(from,{buttonsMessage},{quoted: ftrol})
-              cnf.relayWAMessage(prep)
-break
-
-case 'stickhentai':		  
-if (!isNsfw) return reply('La Funcion De Nsfw No Est� Activa')
-reply(mess.wait)
-try {
-      ranp = getRandom('.gif')
-      rano = getRandom('.webp')
-			anu = await getBuffer(`https://api.lolhuman.xyz/api/random2/classic?apikey=${lolh}`)			
-            resi = await upload(anu)            
-			exec(`wget ${resi} -O ${ranp} && ffmpeg -i ${ranp} -vcodec libwebp -filter:v fps=fps=20 -lossless 1 -loop 0 -preset default -an -vsync 0 -s 512:512 ${rano}`, (err) => {
-			  fs.unlinkSync(ranp)
-				if (err) return reply('error')
-				buffer = fs.readFileSync(rano)			
-				cnf.sendMessage(from, buffer, MessageType.sticker, {quoted: mek})
-				fs.unlinkSync(rano)
-			})
-			 } catch {
-			 reply('Lo siento no pude realizar su pedido')
-			 }
-          break
 case 'stickfeetg':
 case 'sfeetg':
 case 'stickfeet':
 case 'feetg':
-if (!isNsfw) return reply('La Funcion De Nsfw No Est� Activa')
 reply(mess.wait)
 try {
       ranp = getRandom('.gif')
@@ -3554,7 +3377,6 @@ try {
 case 'stickbj':
 case 'stickblowbjob':
 case 'sbj':
-if (!isNsfw) return reply('La Funcion De Nsfw No Est� Activa')
 reply(mess.wait)
 try {
       ranp = getRandom('.gif')
@@ -3575,7 +3397,6 @@ case 'stickpussy':
 case 'spussy':
 case 'pussysticker':
 case 'stickerpussy':
-if (!isNsfw) return reply('La Funcion De Nsfw No Est� Activa')
 reply(mess.wait)
 try {
        ranp = getRandom('.gif')
@@ -3592,21 +3413,10 @@ try {
 			 reply('Lo siento no pude realizar su pedido')
 			 }			
 			break
-case  'mach':
-case 'match':
-if (!isGroup) return reply(mess.only.group)
-if (!isNsfw) return reply(`La funci�n Nsfw no est� activa en este grupo\nEscribe: ${prefix}nsfw 1\nPara activar`)
-reply(mess.wait)
-anu = await fetchJson(`https://leyscoders-api.herokuapp.com/api/ppcouple?apikey=MIMINGANZ`)
-bufferf = await getBuffer(anu.result.female)
-buffer = await getBuffer(anu.result.male)
-cnf.sendMessage(from, buffer, image, { quoted: mek})
-cnf.sendMessage(from, bufferf, image, { quoted: mek})
-break
+
 case 'stickneko':
 case 'sneko':
 case 'nekostick':
-if (!isNsfw) return reply('La Funcion De Nsfw No Est� Activa')
 reply(mess.wait)
 try {
       ranp = getRandom('.gif')
@@ -3624,20 +3434,6 @@ try {
 			 }
 
 			break
-case 'konachan':
-case 'kona':
-if (!isGroup) return reply('esta funci�n es solo para grupos')
-if (!isNsfw) return reply(`La funci�n nsfw a�n no est� activa en este grupo\nEscribe ${prefix}nsfw 1`)
-reply(mess.wait)
-anu = await fetchJson(`https://x-restapi.herokuapp.com/api/konachan-search?q=azur_lane&apikey=BETA`)
-yoiz = await getBuffer(anu.image)
-buttons = [{buttonId: `kona`,buttonText:{displayText: `Siguiente`},type:1}]
-              imageMsg = (await cnf.prepareMessageMedia(yoiz, "imageMessage", { thumbnail: yoiz, })).imageMessage
-              buttonsMessage = {footerText:'*BOT*', imageMessage: imageMsg,
-              contentText:`Nota: No hacer spam`,buttons,headerType:4}
-              prep = await cnf.prepareMessageFromContent(from,{buttonsMessage},{quoted: ftrol})
-              cnf.relayWAMessage(prep)
-break
 case  'loli':
 
 reply (mess.wait)
@@ -3646,13 +3442,13 @@ const ui =['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16
 uwu = fs.readFileSync(`./loli/${xfjjs}.jpg`);
 cnf.sendMessage(from, uwu, image, {quote: mek})
 break
-case  'muslos':
-case 'muslo':
+case 'pack':
+
 reply (mess.wait)
-const uiu =['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30']
+const uiu =['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19']
     const xfjjjjjs = uiu[Math.floor(Math.random() * uiu.length)]
 uwu = fs.readFileSync(`./muslos/${xfjjjjjs}.jpg`);
-cnf.sendMessage(from, uwu, image, {quote: mek})
+cnf.sendMessage(from, uwu, image, {quote: mek, caption: '7w7'})
 break	
         case 'piropos':   
                 	      
@@ -3684,45 +3480,10 @@ const frs2 = [`�Alguna vez se han puesto mirar el cielo con atenci�n?\n\n �Han
 				cnf.sendMessage(from, ses, image, { caption: '*Frases 2*\n\n'+ fras2, quoted: mek })
               addFilter(from)
           break
-case 'slap':
-if (!isGroup) return fakegroup('esta funcion es solo para grupos')
-if (!isNsfw) return fakegroup(`La función nsfw aún no está activa en este grupo\nEscribe ${prefix}nsfw 1`)
 
-hai = await getBuffer(`https://hardianto-chan.herokuapp.com/api/anime/random?sfw=slap&apikey=${hardi}`)
-buttons = [{buttonId: `slap`,buttonText:{displayText: `siguiente`},type:1}]
-              imageMsg = (await cnf.prepareMessageMedia(hai, "imageMessage", { thumbnail: hai, })).imageMessage
-              buttonsMessage = {footerText:'Kriz Edits', imageMessage: imageMsg,
-              contentText:`Nota: No hacer spam`,buttons,headerType:4}
-              prep = await cnf.prepareMessageFromContent(from,{buttonsMessage},{quoted: fvn})
-              cnf.relayWAMessage(prep)
-break
-case 'poke':
-if (!isGroup) return fakegroup('esta funcion es solo para grupos')
-if (!isNsfw) return fakegroup(`La función nsfw aún no está activa en este grupo\nEscribe ${prefix}nsfw 1`)
 
-hai = await getBuffer(`https://hardianto-chan.herokuapp.com/api/anime/random?sfw=poke&apikey=${hardi}`)
-buttons = [{buttonId: `poke`,buttonText:{displayText: `siguiente`},type:1}]
-              imageMsg = (await cnf.prepareMessageMedia(hai, "imageMessage", { thumbnail: hai, })).imageMessage
-              buttonsMessage = {footerText:'Kriz Edits', imageMessage: imageMsg,
-              contentText:`Nota: No hacer spam`,buttons,headerType:4}
-              prep = await cnf.prepareMessageFromContent(from,{buttonsMessage},{quoted: fvn})
-              cnf.relayWAMessage(prep)
-break
-case 'keta':
-if (!isGroup) return fakegroup('esta funcion es solo para grupos')
-if (!isNsfw) return fakegroup(`La función nsfw aún no está activa en este grupo\nEscribe ${prefix}nsfw 1`)
-
-hai = await getBuffer(`https://hardianto-chan.herokuapp.com/api/anime/random?nsfw=keta&apikey=${hardi}`)
-buttons = [{buttonId: `keta`,buttonText:{displayText: `siguiente`},type:1}]
-              imageMsg = (await cnf.prepareMessageMedia(hai, "imageMessage", { thumbnail: hai, })).imageMessage
-              buttonsMessage = {footerText:'Kriz Edits', imageMessage: imageMsg,
-              contentText:`Nota: No hacer spam`,buttons,headerType:4}
-              prep = await cnf.prepareMessageFromContent(from,{buttonsMessage},{quoted: fvn})
-              cnf.relayWAMessage(prep)
-break
 case  'awoo':
 if (!isGroup) return fakegroup('esta funcion es solo para grupos')
-if (!isNsfw) return fakegroup(`La función nsfw aún no está activa en este grupo\nEscribe ${prefix}nsfw 1`)
 
 anu = await fetchJson(`https://waifu.pics/api/sfw/awoo`)
 buffer = await getBuffer(anu.url)
@@ -3730,7 +3491,6 @@ cnf.sendMessage(from, buffer, image, { quoted: mek, thumbnail: fs.readFileSync('
 break
 case  'blowjob':
 if (!isGroup) return fakegroup('esta funcion es solo para grupos')
-if (!isNsfw) return fakegroup(`La función nsfw aún no está activa en este grupo\nEscribe ${prefix}nsfw 1`)
 
 anu = await fetchJson(`https://nekos.life/api/v2/img/blowjob`)
 buffer = await getBuffer(anu.url)
@@ -3738,7 +3498,6 @@ cnf.sendMessage(from, buffer, image, { quoted: mek, thumbnail: fs.readFileSync('
 break
 case  'hentai': 
 if (!isGroup) return fakegroup('esta funcion es solo para grupos')
-if (!isNsfw) return fakegroup(`La función nsfw aún no está activa en este grupo\nEscribe ${prefix}nsfw 1`)
 
 anu = await fetchJson(`https://waifu.pics/api/nsfw/neko`)
 buffer = await getBuffer(anu.url)
@@ -3746,7 +3505,6 @@ cnf.sendMessage(from, buffer, image, { quoted: mek, thumbnail: fs.readFileSync('
 break
 case  'megumin':
 if (!isGroup) return fakegroup('esta funcion es solo para grupos')
-if (!isNsfw) return fakegroup(`La función nsfw aún no está activa en este grupo\nEscribe ${prefix}nsfw 1`)
 
 anu = await fetchJson(`https://waifu.pics/api/sfw/megumin`)
 buffer = await getBuffer(anu.url)
@@ -3754,7 +3512,6 @@ cnf.sendMessage(from, buffer, image, { quoted: mek, thumbnail: fs.readFileSync('
 break
 case  'neko':
 if (!isGroup) return fakegroup('esta funcion es solo para grupos')
-if (!isNsfw) return fakegroup(`La función nsfw aún no está activa en este grupo\nEscribe ${prefix}nsfw 1`)
 
 anu = await fetchJson(`https://waifu.pics/api/nsfw/neko`)
 buffer = await getBuffer(anu.url)
@@ -3762,24 +3519,10 @@ cnf.sendMessage(from, buffer, image, { quoted: mek, thumbnail: fs.readFileSync('
 break
 case  'trapnime':
 if (!isGroup) return reply(mess.only.group)
-if (!isNsfw) return reply(`La función nsfw aún no está activa en este grupo\nEscribe ${prefix}nsfw 1`)
 reply(mess.wait)
 anu = await fetchJson(`https://waifu.pics/api/nsfw/trap`)
 buffer = await getBuffer(anu.url)
 cnf.sendMessage(from, buffer, image, { quoted: mek})
-break
-case 'hentai2':
-case 'hentai4everyone':
-if (!isGroup) return reply('esta funci�n es solo para grupos')
-if (!isNsfw) return reply(`La función nsfw aún no está activa en este grupo\nEscribe ${prefix}nsfw 1`)
-reply(mess.wait)
-yoiz = await getBuffer(`https://api.lolhuman.xyz/api/random/nsfw/hentai4everyone?apikey=${lolh}`)
-buttons = [{buttonId: `hentai2`,buttonText:{displayText: `Siguiente`},type:1}]
-              imageMsg = (await cnf.prepareMessageMedia(yoiz, "imageMessage", { thumbnail: yoiz, })).imageMessage
-              buttonsMessage = {footerText:'*BOT*', imageMessage: imageMsg,
-              contentText:`Nota: No hacer spam`,buttons,headerType:4}
-              prep = await cnf.prepareMessageFromContent(from,{buttonsMessage},{quoted: ftrol})
-              cnf.relayWAMessage(prep)
 break
 //Listo
 case 'writeleft':
