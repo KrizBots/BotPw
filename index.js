@@ -2140,20 +2140,7 @@ ${anu.result.url_video}
   anu = await fetchJson(`https://api.zeks.xyz/api/ytplaymp3?apikey=apivinz&q=`)
   buttons = [{buttonId: `video`,buttonText:{displayText: `Video`},type:1}]
   if (anu.error) return fakegroup(anu.error)
-  infomp3 = `❏━━━━❪𝗠𝗨𝗦𝗜𝗖𝗔❫━━━━❏
-┃
-┃❏ *Nombre* : + data.title
-┃
-┃❏ *Extensión* :  + data.size
-  
-┃
-┃❏ *Duracion* :  + data.duration
-
-┃
-┃❏ *Link* : + data.url_audio
-
-┃  
-❏━━━━━━━━━━❏`);
+  infomp3 = `Enviando Musica...`);
 `
   buffer = await getBuffer(anu.result.thumbnail)
   lagu = await getBuffer(anu.result.url_audio)
