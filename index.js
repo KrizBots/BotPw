@@ -2142,14 +2142,18 @@ ${anu.result.url_video}
   if (anu.error) return fakegroup(anu.error)
   infomp3 = `❏━━━━❪𝗠𝗨𝗦𝗜𝗖𝗔❫━━━━❏
 ┃
-┃❏ *Nombre* : ${anu.result.title}
+┃❏ *Nombre* : + data.title
 ┃
-┃❏ *Extensión* :${anu.result.source}
+┃❏ *Extensión* :  + data.size
+  
 ┃
-┃❏ *Tamaño* : ${filesizeF}
+┃❏ *Duracion* :  + data.duration
+
 ┃
-┃
-❏━━━━❪𝗕𝗢𝗧❫━━━━❏`);
+┃❏ *Link* : + data.url_audio
+
+┃  
+❏━━━━━━━━━━❏`);
 `
   buffer = await getBuffer(anu.result.thumbnail)
   lagu = await getBuffer(anu.result.url_audio)
