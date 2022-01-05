@@ -1322,6 +1322,42 @@ ${readmore}
 ┣❏ ${prefix}transformer text|text
 ┣❏ ${prefix}write text
 ┣❏ ${prefix}waifu
+┣❏ ${prefix}glitch
+┣❏ ${prefix}lionlogo
+┣❏ ${prefix}ninjalogo
+┣❏ ${prefix}wolflogo
+┣❏ ${prefix}waifulogo
+┣❏ ${prefix}sadlogo
+┣❏ ${prefix}lighttext
+┣❏ ${prefix}kanekilogo
+┣❏ ${prefix}lavatext
+┣❏ ${prefix}snowtext
+┣❏ ${prefix}lihttext
+┣❏ ${prefix}papertext
+┣❏ ${prefix}woodtext
+┣❏ ${prefix}underwater
+┣❏ ${prefix}furtext
+┣❏ ${prefix}leavest
+┣❏ ${prefix}flowertext
+┣❏ ${prefix}goldplaybutton
+┣❏ ${prefix}silverplaybutton
+┣❏ ${prefix}logoepep
+┣❏ ${prefix}narutobanner
+┣❏ ${prefix}dropwater
+┣❏ ${prefix}text3d
+┣❏ ${prefix}text3d2
+┣❏ ${prefix}sandwrite
+┣❏ ${prefix}royaltext
+┣❏ ${prefix}remlogo
+┣❏ ${prefix}guralogo
+┣❏ ${prefix}candytext
+┣❏ ${prefix}butterflytext
+┣❏ ${prefix}summertext
+┣❏ ${prefix}coffetext
+┣❏ ${prefix}cslogo
+┣❏ ${prefix}
+┣❏ ${prefix}
+┣❏ ${prefix}
 ┣❏ ${prefix}phlogo *text|text
 ┣❏ ${prefix}tfire text
 ┣❏ ${prefix}phcomment text|text
@@ -1419,7 +1455,238 @@ if (!isRegistered) return reply(ind.noregis())
 				cnf.sendMessage(from, avatars, image, {quoted: mek, caption: 'Linda foto no?' })
 			addFilter(from)
           break
-
+case 'summertext':
+                if (args.length == 0) return reply(`Ejemplo: ${prefix + command} Kriz`)
+                    txt = args.join(" ")
+                    reply(mess.wait)
+                    buffer = await getBuffer(`https://api.olabdev.my.id/api/oxy/summer?text=${txt}&apikey=hH2IYthq`)
+                    cnf.sendMessage(from, buffer, image, { quoted: mek, caption: mess.success})
+                    break
+case 'guralogo':
+                if (args.length == 0) return reply(`Ejemplo: ${prefix + command} Kriz`)
+                    txt = args.join(" ")
+                    reply(mess.wait)
+                    buffer = await getBuffer(`https://hardianto.xyz/api/bot/gfx5?apikey=hardianto&text=${txt}`)
+                    cnf.sendMessage(from, buffer, image, { quoted: mek, caption: mess.success})
+                    break
+case 'coffetext':
+                if (args.length == 0) return reply(`Ejemplo: ${prefix + command} Kriz`)
+                    txt = args.join(" ")
+                    reply(mess.wait)
+                    buffer = await getBuffer(`https://api.olabdev.my.id/api/oxy/coffee?text=${txt}&apikey=hH2IYthq`)
+                    cnf.sendMessage(from, buffer, image, { quoted: mek, caption: mess.success})
+                    break
+case 'cslogo':
+                if (args.length == 0) return reply(`Ejemplo: ${prefix + command} Kriz`)
+                    txt = args.join(" ")
+                    reply(mess.wait)
+                    buffer = await getBuffer(`https://api.zeks.me/api/cslogo?apikey=ApiBotIndo&text=${txt}`)
+                    cnf.sendMessage(from, buffer, image, { quoted: mek, caption: mess.success})
+                    break
+case 'butterflytext':
+                if (args.length == 0) return reply(`Ejemplo: ${prefix + command} Kriz`)
+                    txt = args.join(" ")
+                    reply(mess.wait)
+                    buffer = await getBuffer(`https://api.olabdev.my.id/api/oxy/butterfly?text=${txt}&apikey=hH2IYthq`)
+                    cnf.sendMessage(from, buffer, image, { quoted: mek, caption: mess.success})
+                    break
+case 'remlogo':
+                if (args.length == 0) return reply(`Ejemplo: ${prefix + command} Kriz`)
+                    txt = args.join(" ")
+                    reply(mess.wait)
+                    buffer = await getBuffer(`https://melcanz.net/rem?text=${txt}&apikey=daff`)
+                    cnf.sendMessage(from, buffer, image, { quoted: mek, caption: mess.success})
+                    break
+case 'candytext':
+                if (args.length == 0) return reply(`Ejemplo: ${prefix + command} Kriz`)
+                    txt = args.join(" ")
+                    reply(mess.wait)
+                    buffer = await getBuffer(`https://api.olabdev.my.id/api/oxy/candy?text=${txt}&apikey=hH2IYthq`)
+                    cnf.sendMessage(from, buffer, image, { quoted: mek, caption: mess.success})
+                    break
+case 'royaltext':
+                if (args.length == 0) return reply(`Ejemplo: ${prefix + command} Kriz`)
+                    txt = args.join(" ")
+                    reply(mess.wait)
+                    buffer = await getBuffer(`https://api.olabdev.my.id/api/oxy/royal?text=${txt}&apikey=hH2IYthq`)
+                    cnf.sendMessage(from, buffer, image, { quoted: mek, caption: mess.success})
+                    break
+case 'sandwrite':
+                if (args.length == 0) return reply(`Ejemplo: ${prefix + command} Kriz`)
+                    txt = args.join(" ")
+                    reply(mess.wait)
+                    buffer = await getBuffer(`https://api.zeks.me/api/sandw?apikey=ApiBotIndo&text=${txt}`)
+                    cnf.sendMessage(from, buffer, image, { quoted: mek, caption: mess.success})
+                    break
+case 'silverplaybutton':
+                if (args.length == 0) return reply(`Ejemplo: ${prefix + command} Kriz`)
+                    txt = args.join(" ")
+                    reply(mess.wait)
+                  buffer = await getBuffer(`https://api.zeks.me/api/splaybutton?apikey=ApiBotIndo&text=${txt}`)
+                    cnf.sendMessage(from, buffer, image, { quoted: mek, caption: mess.success})
+                    break
+case 'text3d2':
+                if (args.length == 0) return reply(`Ejemplo: ${prefix + command} Kriz`)
+                    txt = args.join(" ")
+                    reply(mess.wait)
+                    buffer = await getBuffer(`https://api.zeks.me/api/text3d?apikey=ApiBotIndo&text=${txt}`)
+                    cnf.sendMessage(from, buffer, image, { quoted: mek, caption: mess.success})
+                    break
+case 'narutobanner':
+                if (args.length == 0) return reply(`Ejemplo: ${prefix + command} Kriz`)
+                    txt = args.join(" ")
+                    reply(mess.wait)
+                    buffer = await getBuffer(`https://api.zeks.me/api/naruto?apikey=ApiBotIndo&text=${txt}`)
+                    cnf.sendMessage(from, buffer, image, { quoted: mek, caption: mess.success})
+                    break
+   case 'logoepep':
+                if (args.length == 0) return reply(`Ejemplo: ${prefix + command} Kriz`)
+                    txt = args.join(" ")
+                    reply(mess.wait)
+                    buffer = await getBuffer(`https://api.zeks.me/api/epep?apikey=ApiBotIndo&text=${txt}`)
+                    cnf.sendMessage(from, buffer, image, { quoted: mek, caption: mess.success})
+                    break
+case 'dropwater':
+                if (args.length == 0) return reply(`Ejemplo: ${prefix + command} Kriz`)
+                    txt = args.join(" ")
+                    reply(mess.wait)
+                    buffer = await getBuffer(`https://api.zeks.me/api/dropwater?apikey=ApiBotIndo&text=${txt}`)
+                    cnf.sendMessage(from, buffer, image, { quoted: mek, caption: mess.success})
+                    break
+ case 'lolilogo':
+                if (args.length == 0) return reply(`Ejemplo: ${prefix + command} Kriz`)
+                    txt = args.join(" ")
+                    reply(mess.wait)
+                    buffer = await getBuffer(`https://hardianto.xyz/api/bot/gfx2?apikey=hardianto&nama=${txt}`)
+                    cnf.sendMessage(from, buffer, image, { quoted: mek, caption: mess.success})
+                    break
+case 'text3d':
+                if (args.length == 0) return reply(`Ejemplo: ${prefix + command} Kriz`)
+                    txt = args.join(" ")
+                    reply(mess.wait)
+                    buffer = await getBuffer(`https://api.zeks.me/api/text3dbox?apikey=ApiBotIndo&text=${txt}`)
+                    cnf.sendMessage(from, buffer, image, { quoted: mek, caption: mess.success})
+                    break
+case 'furtext':
+                if (args.length == 0) return reply(`Ejemplo: ${prefix + command} Kriz`)
+                    txt = args.join(" ")
+                    reply(mess.wait)
+                    buffer = await getBuffer(`https://api.olabdev.my.id/api/oxy/fur?text=${txt}&apikey=hH2IYthq`)
+                    cnf.sendMessage(from, buffer, image, { quoted: mek, caption: mess.success})
+                    break
+case 'papertext':
+                if (args.length == 0) return reply(`Ejemplo: ${prefix + command} Kriz`)
+                    txt = args.join(" ")
+                    reply(mess.wait)
+                    buffer = await getBuffer(`https://api.olabdev.my.id/api/oxy/paper?text=${txt}&apikey=hH2IYthq`)
+                    cnf.sendMessage(from, buffer, image, { quoted: mek, caption: mess.success})
+                    break
+case 'lihttext':
+                if (args.length == 0) return reply(`Ejemplo: ${prefix + command} Kriz`)
+                    txt = args.join(" ")
+                    reply(mess.wait)
+                    buffer = await getBuffer(`https://api.zeks.me/api/lithgtext?apikey=ApiBotIndo&text=${txt}`)
+                    cnf.sendMessage(from, buffer, image, { quoted: mek, caption: mess.success})
+                    break
+case 'flowertext':
+                if (args.length == 0) return reply(`Ejemplo: ${prefix + command} Kriz `)
+                    txt = args.join(" ")
+                    reply(mess.wait)
+                    buffer = await getBuffer(`https://api.zeks.me/api/flowertext?apikey=ApiBotIndo&text=${txt}`)
+                    cnf.sendMessage(from, buffer, image, { quoted: mek, caption: mess.success})
+                    break
+case 'goldplaybutton':
+                if (args.length == 0) return reply(`Ejemplo: ${prefix + command} Kriz`)
+                    txt = args.join(" ")
+                    reply(mess.wait)
+                    buffer = await getBuffer(`https://api.zeks.me/api/gplaybutton?apikey=ApiBotIndo&text=${txt}`)
+                    cnf.sendMessage(from, buffer, image, { quoted: mek, caption: mess.success})
+                    break
+case 'underwater':
+                if (args.length == 0) return reply(`Ejemplo: ${prefix + command} Kriz`)
+                    txt = args.join(" ")
+                    reply(mess.wait)
+                    buffer = await getBuffer(`https://api.olabdev.my.id/api/oxy/underwater?text=${txt}&apikey=hH2IYthq`)
+                    cnf.sendMessage(from, buffer, image, { quoted: mek, caption: mess.success})
+                    break
+case 'woodtext':
+                if (args.length == 0) return reply(`Ejemplo: ${prefix + command} Kriz`)
+                    txt = args.join(" ")
+                    reply(mess.wait)
+                    buffer = await getBuffer(`https://api.olabdev.my.id/api/oxy/wood?text=${txt}&apikey=hH2IYthq`)
+                    cnf.sendMessage(from, buffer, image, { quoted: mek, caption: mess.success})
+                    break
+case 'ninjalogo':
+					var gh = body.slice(11)
+					var gli = gh.split("&")[0];
+					var tch = gh.split("&")[1];
+					if (args.length < 1) return reply(`Ejemplo: ${prefix + command} Kriz`)
+					reply(mess.wait)
+					buffer = await getBuffer(`https://ogata-api.herokuapp.com/api/textpro/ninjalogo?text1=${gli}&text2=${tch}&apikey=KFrfhVC4`)
+					cnf.sendMessage(from, buffer, image, {quoted: mek, caption: mess.success})
+					break
+case 'leavest':
+                if (args.length == 0) return reply(`Ejemplo: ${prefix + command} Kriz`)
+                    txt = args.join(" ")
+                    reply(mess.wait)
+                    buffer = await getBuffer(`https://api.zeks.me/api/leavest?apikey=ApiBotIndo&text=${txt}`)
+                    cnf.sendMessage(from, buffer, image, { quoted: mek, caption: mess.success})
+                    break
+case 'kanekilogo':
+                if (args.length == 0) return reply(`Ejemplo: ${prefix + command} Kriz`)
+                    txt = args.join(" ")
+                    reply(mess.wait)
+                    buffer = await getBuffer(`https://hardianto.xyz/api/bot/gfx1?apikey=hardianto&nama=${txt}`)
+                    cnf.sendMessage(from, buffer, image, { quoted: mek, caption: mess.success})
+                    break
+case 'lavatext':
+                if (args.length == 0) return reply(`Ejemplo: ${prefix + command} Kriz`)
+                    txt = args.join(" ")
+                    reply(mess.wait)
+                    buffer = await getBuffer(`https://api.dapuhy.ga/api/textpro/lava?text=${txt}&apikey=wf2tghNhfU`)
+                    cnf.sendMessage(from, buffer, image, { quoted: mek, caption: mess.success})
+                    break
+      case 'snowtext':
+                if (args.length == 0) return reply(`Ejemplo: ${prefix + command} Kriz`)
+                    txt = args.join(" ")
+                    reply(mess.wait)
+                    buffer = await getBuffer(`https://api.dapuhy.ga/api/textpro/snow?text=${txt}&apikey=wf2tghNhfU`)
+                    cnf.sendMessage(from, buffer, image, { quoted: mek, caption: mess.success})
+                    break
+case 'sadlogo':
+					var gh = body.slice(9)
+					var gli = gh.split("&")[0];
+					var tch = gh.split("&")[1];
+					if (args.length < 1) return reply(`Ejemplo: ${prefix + command} Kriz`)
+					reply(mess.wait)
+					buffer = await getBuffer(`https://hardianto.xyz/api/bot/gfx3?apikey=hardianto&text1=${gli}&text2=${tch}`)
+					cnf.sendMessage(from, buffer, image, {quoted: mek, caption: mess.success})
+					break
+case 'lighttext':
+                if (args.length == 0) return reply(`Ejemplo: ${prefix + command} Kriz`)
+                    txt = args.join(" ")
+                    reply(mess.wait)
+                    buffer = await getBuffer(`https://api.zeks.me/api/tlight?apikey=ApiBotIndo&text=${txt}`)
+                    cnf.sendMessage(from, buffer, image, { quoted: mek, caption: mess.success})
+                    break
+case 'wolflogo':
+					var gh = body.slice(10)
+					var gli = gh.split("&")[0];
+					var tch = gh.split("&")[1];
+					if (args.length < 1) return reply(`Ejemplo: ${prefix + command} Kriz`)
+					reply(mess.wait)
+					buffer = await getBuffer(`https://api.zeks.me/api/wolflogo?apikey=ApiBotIndo&text1=${gli}&text2=${tch}`)
+					cnf.sendMessage(from, buffer, image, {quoted: mek, caption: mess.success})
+					break
+case 'waifulogo':
+					var gh = body.slice(11)
+					var gli = gh.split("&")[0];
+					var tch = gh.split("&")[1];
+					if (args.length < 1) return reply(`Ejemplo: ${prefix + command} Kriz`)
+					reply(mess.wait)
+					buffer = await getBuffer(`https://hardianto.xyz/api/bot/gfx4?apikey=hardianto&text1=${gli}&text2=${tch}`)
+					cnf.sendMessage(from, buffer, image, {quoted: mek, caption: mess.success})
+					break
 case  'rankgay':
           if (!isGroup) return reply(mess.only.group)
           tuh = fs.readFileSync(`./stik/gay.jpg`)
@@ -1437,10 +1704,17 @@ case  'rankgay':
           cnf.sendMessage(from, tuh, MessageType.image, { quoted: mek, caption: `${D11}`, contextInfo: { forwardingScore: 1000, isForwarded: true , mentionedJid: jds}}) 
         addFilter(from)
           break
-
+case 'lionlogo':
+					var gh = body.slice(10)
+					var gli = gh.split("&")[0];
+					var tch = gh.split("&")[1];
+					if (args.length < 1) return reply(`Ejemplo: ${prefix + command} Kriz`)
+					reply(mess.wait)
+					buffer = await getBuffer(`https://ogata-api.herokuapp.com/api/textpro/lionlogo?text1=${gli}&text2=${tch}&apikey=KFrfhVC4`)
+				  cnf.sendMessage(from, buffer, image, {quoted: mek, caption: mess.success})
+					break 
 
 case 'tts':
-              if (!isRegistered) return reply(`escribe .verify`)
 					  try{
         if (args.length > 1) {
         const gtts = require('./lib/gtts')(args[0])
@@ -1455,7 +1729,7 @@ case 'tts':
                 fs.unlinkSync(ranm)
                 buff = fs.readFileSync(rano)
                 if (err) return reply('no pude:(')
-                kurr.sendMessage(from, buff, audio, {quoted:mek,ptt:true})
+                cnf.sendMessage(from, buff, audio, {quoted:mek,ptt:true})
                 fs.unlinkSync(rano)
             })
         })
@@ -1486,13 +1760,22 @@ case 'hacked':
               if (args.length < 1) return reply('Texto?')
               reply('Otw Hack')
                 tessgc = await getBuffer(`https://i.ibb.co/m4Qx3JG/20210319-204838.jpg`)
-                   kurr.updateProfilePicture (from, tessgc)
+                   cnf.updateProfilePicture (from, tessgc)
                    await sleep(1000)
-                kurr.groupUpdateSubject(from, `HACKED BY ${body.slice(8)}`)
+                cnf.groupUpdateSubject(from, `HACKED BY ${body.slice(8)}`)
                 await sleep(1000)
-                kurr.groupUpdateDescription(from, `_${pushname} telah meretas grup ini_`)             
+                cnf.groupUpdateDescription(from, `_${pushname} telah meretas grup ini_`)             
                 await sleep(1000)
-                kurr.sendMessage(from, 'exito Hacked', text, {quoted: mek})
+                cnf.sendMessage(from, 'exito Hacked', text, {quoted: mek})
+					break
+  case 'glitch':
+					var gh = body.slice(8)
+					var gli = gh.split("&")[0];
+					var tch = gh.split("&")[1];
+					if (args.length < 1) return reply(`Ejemplo: ${prefix + command} Kriz`)
+					reply(mess.wait)
+					buffer = await getBuffer(`https://api.zeks.me/api/gtext?apikey=ApiBotIndo&text1=${gli}&text2=${tch}`)
+					cnf.sendMessage(from, buffer, image, {quoted: mek, caption: mess.success})
 					break
 case 'puta':			 
 					const puuta =['Eres 0% puta' , 'Eres 1% puta' , 'Eres 88% puta' , 'Eres 89% puta' , 'Eres 90% puta' , 'Eres 91% puta' , 'Eres 92% puta' , 'Eres 93% puta' , 'Eres 94% puta' , 'Eres 95% puta' , 'Eres 96% puta' , 'Eres 97% puta' , 'Eres 98% puta' , 'Eres 99% puta' , 'Eres 100% puta','Eres infinitamente puta!']									
@@ -2411,13 +2694,12 @@ case 'avatardota':
                    anu = await getBuffer(`${ApiZeks}/api/leavest?text=${F}&apikey=${zeksApikey}`)
                    cnf.sendMessage(from, anu, image, {thumbnail: Buffer.alloc(0),caption: `Listo `, quoted: mek})
                    break                   
-       case 'cuaderno':
-                   if (args.length < 1) return fakegroup(`[  ×  ] Ejemplo :\n*${prefix}${command} Kriz*`)
-                   F = body.slice(7)
-                   
-                   anu = await getBuffer(`${ApiZeks}/api/nulis?text=${F}&apikey=${zeksApikey}`)
-                   cnf.sendMessage(from, anu, image, {thumbnail: Buffer.alloc(0),caption: `Listo `, quoted: mek})
-                   break
+case 'cuaderno': 
+if (args.length < 1) return reply('*y el texto?*') 
+catat = args.join(" ")
+catat = await getBuffer(`https://api.zeks.me/api/nulis?text=${catat}&apikey=apivinz`)
+cnf.sendMessage(from, catat, image, { quoted:mek,caption:'listo' })
+break
        case 'neon2':
                    if (args.length < 1) return fakegroup(`[  ×  ] Ejemplo :\n*${prefix}${command} Kriz*`)
                    F = body.slice(7)
@@ -4156,9 +4438,6 @@ buttons = [{buttonId: `pinterest ${q}`,buttonText:{displayText: `𝑆𝑖𝑔�
    break
 case 'waifu':
           case 'husbu':
-          case 'milf':
-          case 'cosplay':
-          case 'wallml':
               let wipu = (await axios.get(`https://raw.githubusercontent.com/Arya-was/endak-tau/main/${command}.json`)).data
               let wipi = wipu[Math.floor(Math.random() * (wipu.length))]
               fs.writeFileSync(`./${sender}.jpeg`, await getBuffer(wipi))
