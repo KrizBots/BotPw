@@ -415,14 +415,14 @@ cmhit.push(command)
     mess = {
       wait: "*En corto te doy tu pedido espera*",
       success: "Listo...",
-      wrongFormat: "𝐹𝑜𝑟𝑚𝑎𝑡𝑜 𝑖𝑛𝑐𝑜𝑟𝑟𝑒𝑐𝑡𝑜, 𝑖𝑛𝑡𝑒𝑛𝑡𝑎𝑙𝑜 𝑑𝑒 𝑛𝑢𝑒𝑣𝑜 𝑒𝑛 𝑒𝑙 𝑚𝑒𝑛𝑢",
+      wrongFormat: "formato incorrecto",
       error: {
-        stick: "𝐸𝑠𝑡𝑜 𝑛𝑜 𝑒𝑠 𝑢𝑛 𝑠𝑡𝑖𝑐𝑘𝑒𝑟 𝑐𝑡𝑚𝑟 😂",
-        apiz: "𝐸𝑟𝑟𝑜𝑟, 𝑡𝑎𝑙𝑣𝑒𝑧 𝑙𝑎 𝑎𝑝𝑖𝑘𝑒𝑦 𝑎𝑦𝑎 𝑐𝑎𝑑𝑢𝑐𝑎𝑑𝑜",
-        Iv: "𝐿𝑖𝑛𝑘 𝑖𝑛𝑣𝑎𝑙𝑖𝑑𝑜 𝑐𝑜𝑚𝑜 𝑡𝑢 ℎ𝑢𝑒𝑣𝑎𝑑𝑎",
+        stick: "no es un sticker",
+        apiz: "error",
+        Iv: "link invalido",
       },
       only: {
-        group: "𝐸𝑠𝑡𝑒 𝑐𝑜𝑚𝑎𝑛𝑑𝑜 𝑒𝑠 𝑠𝑜𝑙𝑜 𝑝𝑎𝑟𝑎 𝑔𝑟𝑢𝑝𝑜𝑠",
+        group: "solo en grupos",
       },
     };
 
@@ -611,7 +611,7 @@ const fstick = {
     };
 const fvid = {
 	 key: { 
-          fromMe: false,
+          fromMe: false,i
 	      participant: `994408103470@s.whatsapp.net`, ...(from ? 
 	 { remoteJid: "6289643739077-1613049930@g.us" } : {}) 
                 },
@@ -1201,16 +1201,15 @@ const serialUser = createSerial(18)
 							}
 	        veri = sender
 	        _registered.push(sender)
-	        fs.writeFileSync('./database/user/registered.json', JSON.stringify(_registered))
 	        addRegisteredUser(sender, serialUser)
 	         const anuu = ` 「 𝗥𝗘𝗚𝗜𝗦𝗧𝗥𝗢 𝗗𝗘 𝗨𝗦𝗨𝗔𝗥𝗜𝗢 」
 
-*☂︎ Nombre :* ${pushname}
-*☂︎ API :* +${sender.split('@')[0]}
-*☂︎ Serial:* ${serialUser}
-*☂ ︎Total:* ${_registered.length} User
+*︎ Nombre :* ${pushname}
+* API :* +${sender.split('@')[0]}
+* Serial:* ${serialUser}
+* ︎Total:* ${_registered.length} User
 
-          *「 𝙽𝙴𝚆 •ც૦੮ 」*`
+          *「 ც૦੮ 」*`
          haitod = await getBuffer(`http://hadi-api.herokuapp.com/api/card/verify?nama=${encodeURI(pushname)}&member=${_registered.length}&seri=${serialUser}&pp=${ppimg}&bg=${ppimg}`)
              buttons = [{buttonId: `menu`,buttonText:{displayText: `𝗠𝗘𝗡𝗨 ☘️`},type:1}]
               imageMsg = (await cnf.prepareMessageMedia(haitod, "imageMessage", { thumbnail: haitod, })).imageMessage
